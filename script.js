@@ -368,4 +368,15 @@ document.getElementById("contact-form")
    8. WEBSITE WELCOME MESSAGE
 ========================================== */
 
-console.log("Smart Agriculture Website Loaded Successfully 🌱");
+function changeLanguage(lang) {
+
+    if (lang === "or") {
+        document.documentElement.lang = "or";
+        alert("ଓଡ଼ିଆ ଭାଷା ଚୟନ କରାଗଲା");
+    } 
+    else {
+        document.documentElement.lang = "en";
+        alert("English language selected");
+    }
+
+}
