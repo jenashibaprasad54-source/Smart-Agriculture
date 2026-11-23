@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Agriculture | Digital Farming Assistant</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🌱 Smart Agriculture
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#crops">Crops</a></li>
+                <li><a href="#fertilizer">Fertilizer</a></li>
+                <li><a href="#irrigation">Irrigation</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#market">Market Price</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="login-btn" onclick="showLogin()">
+                Farmer Login
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Smart Farming for a
+                <span>Better Future</span>
+            </h1>
+
+            <p>
+                Empowering farmers with modern agricultural technology,
+                weather information, crop recommendations and smart farming solutions.
+            </p>
+
+            <a href="#dashboard" class="hero-btn">
+                Explore Dashboard
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+
+        <h2>Farmer Dashboard</h2>
+
+        <p class="section-description">
+            Manage your daily farming activities easily.
+        </p>
+
+        <div class="dashboard-cards">
+
+            <div class="card">
+                <h3>🌦 Weather</h3>
+                <p>Check today's weather information.</p>
+                <a href="#weather">View Weather</a>
+            </div>
+
+            <div class="card">
+                <h3>🌾 Crop Guide</h3>
+                <p>Find suitable crops for your land.</p>
+                <a href="#crops">Explore Crops</a>
+            </div>
+
+            <div class="card">
+                <h3>🧪 Fertilizer</h3>
+                <p>Calculate fertilizer requirements.</p>
+                <a href="#fertilizer">Calculate Now</a>
+            </div>
+
+            <div class="card">
+                <h3>💧 Irrigation</h3>
+                <p>Manage your irrigation schedule.</p>
+                <a href="#irrigation">Manage Water</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Weather Section: Open-Meteo API -->
+    <section id="weather" class="section">
+
+        <h2>Weather Forecast</h2>
+
+        <p>
+            Get weather information for your farming location.
+        </p>
+
+        <div class="weather-box">
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter your city or village"
+            >
+
+            <button onclick="getWeather()">
+                Check Weather
+            </button>
+
+            <div id="weather-result">
+                <p>Weather information will appear here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Crop Recommendation Section -->
+    <section id="crops" class="section">
+
+        <h2>Crop Recommendation</h2>
+
+        <p>
+            Select your soil type and season to get crop suggestions.
+        </p>
+
+        <div class="crop-box">
+
+            <label for="soil">Select Soil Type:</label>
+
+            <select id="soil">
+                <option value="">Choose Soil</option>
+                <option value="alluvial">Alluvial Soil</option>
+                <option value="clay">Clay Soil</option>
+                <option value="sandy">Sandy Soil</option>
+                <option value="loamy">Loamy Soil</option>
+            </select>
+
+            <label for="season">Select Season:</label>
+
+            <select id="season">
+                <option value="">Choose Season</option>
+                <option value="kharif">Kharif</option>
+                <option value="rabi">Rabi</option>
+                <option value="summer">Summer</option>
+            </select>
+
+            <button onclick="recommendCrop()">
+                Recommend Crop
+            </button>
+
+            <div id="crop-result">
+                <p>Recommended crops will appear here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Fertilizer Calculator -->
+    <section id="fertilizer" class="section">
+
+        <h2>Fertilizer Calculator</h2>
+
+        <p>
+            Calculate fertilizer quantity according to your land area.
+        </p>
+
+        <div class="calculator-box">
+
+            <label for="land">
+                Land Area (in acres):
+            </label>
+
+            <input
+                type="number"
+                id="land"
+                placeholder="Enter land area"
+                min="0"
+            >
+
+            <label for="fertilizer-type">
+                Select Fertilizer:
+            </label>
+
+            <select id="fertilizer-type">
+                <option value="">Choose Fertilizer</option>
+                <option value="urea">Urea</option>
+                <option value="dap">DAP</option>
+                <option value="potash">Potash</option>
+            </select>
+
+            <button onclick="calculateFertilizer()">
+                Calculate
+            </button>
+
+            <div id="fertilizer-result">
+                <p>Calculation result will appear here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Irrigation Section -->
+    <section id="irrigation" class="section">
+
+        <h2>Irrigation Management</h2>
+
+        <p>
+            Manage your farming water schedule.
+        </p>
+
+        <div class="irrigation-box">
+
+            <label for="irrigation-date">
+                Select Irrigation Date:
+            </label>
+
+            <input
+                type="date"
+                id="irrigation-date"
+            >
+
+            <label for="irrigation-time">
+                Select Time:
+            </label>
+
+            <input
+                type="time"
+                id="irrigation-time"
+            >
+
+            <button onclick="saveIrrigation()">
+                Save Schedule
+            </button>
+
+            <div id="irrigation-result">
+                <p>Your irrigation schedule will appear here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Farming Calendar -->
+    <section id="calendar" class="section">
+
+        <h2>Farming Calendar</h2>
+
+        <div class="calendar-cards">
+
+            <div class="calendar-card">
+                <h3>🌱 Sowing</h3>
+                <p>Prepare soil and sow suitable seeds.</p>
+            </div>
+
+            <div class="calendar-card">
+                <h3>💧 Irrigation</h3>
+                <p>Maintain proper water management.</p>
+            </div>
+
+            <div class="calendar-card">
+                <h3>🌿 Crop Care</h3>
+                <p>Monitor crop growth and health.</p>
+            </div>
+
+            <div class="calendar-card">
+                <h3>🌾 Harvesting</h3>
+                <p>Harvest crops at the right stage.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Market Price Section -->
+    <section id="market" class="section">
+
+        <h2>Crop Market Price</h2>
+
+        <p>
+            Check agricultural market prices.
+        </p>
+
+        <div class="market-box">
+
+            <select id="crop-name">
+                <option value="">Select Crop</option>
+                <option value="rice">Rice</option>
+                <option value="wheat">Wheat</option>
+                <option value="maize">Maize</option>
+                <option value="tomato">Tomato</option>
+                <option value="potato">Potato</option>
+            </select>
+
+            <button onclick="checkMarketPrice()">
+                Check Price
+            </button>
+
+            <div id="market-result">
+                <p>Market price will appear here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+
+        <h2>Contact &amp; Support</h2>
+
+        <p>
+            Smart Agriculture helps farmers access useful farming information.
+        </p>
+
+        <form id="contact-form">
+
+            <input
+                type="text"
+                id="farmer-name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <input
+                type="email"
+                id="farmer-email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <textarea
+                id="farmer-message"
+                placeholder="Enter your message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>🌱 Smart Agriculture</h3>
+
+        <p>
+            Smart Farming | Better Crops | Better Future
+        </p>
+
+        <p>
+            © 2026 Smart Agriculture Project.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>

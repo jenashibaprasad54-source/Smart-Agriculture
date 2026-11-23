@@ -1,0 +1,867 @@
+/* ========================================
+   SMART AGRICULTURE WEBSITE
+   Modern Green Theme
+======================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* ========================================
+   ROOT VARIABLES
+======================================== */
+
+:root {
+    --primary: #2e7d32;
+    --primary-dark: #1b5e20;
+    --primary-light: #e8f5e9;
+
+    --secondary: #81c784;
+
+    --background: #f5f9f4;
+    --white: #ffffff;
+
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+
+    --border: #e5e7eb;
+
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    --radius: 16px;
+}
+
+
+/* ========================================
+   GLOBAL CSS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+
+/* ========================================
+   NAVIGATION BAR
+======================================== */
+
+header {
+    width: 100%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.login-btn {
+    background: var(--primary);
+    color: white;
+
+    padding: 11px 20px;
+    border-radius: 30px;
+
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 580px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 45, 20, 0.88),
+            rgba(20, 80, 35, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef")
+        center / cover no-repeat;
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: fadeIn 1s ease;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 65px);
+    line-height: 1.2;
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #a5d6a7;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #f1f8e9;
+
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    background: #a5d6a7;
+    color: var(--primary-dark);
+
+    padding: 15px 30px;
+    border-radius: 35px;
+
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+
+/* ========================================
+   DASHBOARD SECTION
+======================================== */
+
+.dashboard {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.dashboard h2,
+.section h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--primary-dark);
+
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.dashboard-cards {
+    max-width: 1200px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+
+    padding: 30px 22px;
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary);
+}
+
+.card h3 {
+    color: var(--primary-dark);
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-light);
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.card a {
+    display: inline-block;
+
+    background: var(--primary-light);
+    color: var(--primary-dark);
+
+    padding: 10px 18px;
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* ========================================
+   COMMON SECTION
+======================================== */
+
+.section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section > p {
+    color: var(--text-light);
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   WEATHER SECTION
+======================================== */
+
+#weather {
+    background: #eaf5ee;
+}
+
+.weather-box {
+    max-width: 650px;
+    margin: 35px auto 0;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.weather-box input {
+    width: 65%;
+    padding: 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.weather-box input:focus {
+    border-color: var(--primary);
+}
+
+.weather-box button {
+    padding: 14px 20px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.weather-box button:hover {
+    background: var(--primary-dark);
+}
+
+#weather-result {
+    margin-top: 25px;
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+
+/* ========================================
+   CROP RECOMMENDATION
+======================================== */
+
+.crop-box {
+    max-width: 600px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    text-align: left;
+}
+
+.crop-box label {
+    display: block;
+
+    font-weight: 600;
+    margin: 15px 0 8px;
+}
+
+.crop-box select {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: white;
+    outline: none;
+}
+
+.crop-box select:focus {
+    border-color: var(--primary);
+}
+
+.crop-box button {
+    width: 100%;
+    margin-top: 25px;
+
+    padding: 14px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.crop-box button:hover {
+    background: var(--primary-dark);
+}
+
+#crop-result {
+    margin-top: 25px;
+    padding: 15px;
+
+    background: var(--primary-light);
+    border-radius: 10px;
+
+    color: var(--primary-dark);
+}
+
+
+/* ========================================
+   FERTILIZER CALCULATOR
+======================================== */
+
+.calculator-box {
+    max-width: 600px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    text-align: left;
+}
+
+.calculator-box label {
+    display: block;
+
+    font-weight: 600;
+    margin: 15px 0 8px;
+}
+
+.calculator-box input,
+.calculator-box select {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.calculator-box input:focus,
+.calculator-box select:focus {
+    border-color: var(--primary);
+}
+
+.calculator-box button {
+    width: 100%;
+    margin-top: 25px;
+
+    padding: 14px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.calculator-box button:hover {
+    background: var(--primary-dark);
+}
+
+#fertilizer-result {
+    margin-top: 25px;
+    padding: 15px;
+
+    background: #fff8e1;
+    border-radius: 10px;
+
+    color: #795548;
+}
+
+
+/* ========================================
+   IRRIGATION SECTION
+======================================== */
+
+#irrigation {
+    background: #eaf5ee;
+}
+
+.irrigation-box {
+    max-width: 600px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    text-align: left;
+}
+
+.irrigation-box label {
+    display: block;
+
+    font-weight: 600;
+    margin: 15px 0 8px;
+}
+
+.irrigation-box input {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.irrigation-box button {
+    width: 100%;
+    margin-top: 25px;
+
+    padding: 14px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.irrigation-box button:hover {
+    background: var(--primary-dark);
+}
+
+#irrigation-result {
+    margin-top: 20px;
+    color: var(--primary-dark);
+}
+
+
+/* ========================================
+   FARMING CALENDAR
+======================================== */
+
+.calendar-cards {
+    max-width: 1200px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.calendar-card {
+    background: white;
+    padding: 30px 20px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+.calendar-card:hover {
+    transform: translateY(-8px);
+}
+
+.calendar-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.calendar-card p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   MARKET PRICE SECTION
+======================================== */
+
+#market {
+    background: #eaf5ee;
+}
+
+.market-box {
+    max-width: 600px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.market-box select {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.market-box button {
+    width: 100%;
+    margin-top: 20px;
+
+    padding: 14px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#market-result {
+    margin-top: 20px;
+    color: var(--primary-dark);
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section {
+    background: white;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 35px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--primary);
+}
+
+#contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contact-form button {
+    padding: 15px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+#contact-form button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #123b22;
+    color: white;
+
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #c8e6c9;
+    font-size: 14px;
+
+    margin-top: 8px;
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-cards,
+    .calendar-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .login-btn {
+        padding: 10px 18px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .dashboard,
+    .section {
+        padding: 55px 6%;
+    }
+
+    .dashboard h2,
+    .section h2 {
+        font-size: 27px;
+    }
+
+    .dashboard-cards,
+    .calendar-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-box,
+    .crop-box,
+    .calculator-box,
+    .irrigation-box,
+    .market-box {
+        padding: 22px;
+    }
+
+    .weather-box input {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .weather-box button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 30px 15px;
+    }
+
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #81c784;
+    outline-offset: 3px;
+}
